@@ -1,4 +1,3 @@
-import os
 import sys
 import PyInstaller.__main__ as pyinstaller
 
