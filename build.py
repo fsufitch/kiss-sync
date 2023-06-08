@@ -19,6 +19,7 @@ args.extend(["--onefile"])
 args.extend(["--name", "kiss"])
 args.extend(["--hidden-import", "qtpy"])  # Qt support
 args.extend(["--add-data", f"kiss_sync/gui/dist{SEP}kiss_sync/gui/dist"])
+args.extend(["--splash", "splash.png"])  # Qt support
 args.extend(["kiss_sync/__main__.py"])
 
 print(args)

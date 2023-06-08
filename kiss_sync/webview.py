@@ -4,6 +4,7 @@ from pathlib import Path
 import shutil
 import os
 import sys
+import threading
 import webview
 
 from kiss_sync.gui.server import KissSyncGUI
@@ -42,4 +43,19 @@ def start_kiss_gui() -> None:
 
     window = webview.create_window("my window", gui_app)
     window.min_size = (800, 600)
+
+    def _close_splash() -> None:
+        import time
+
+        time.sleep(1)
+        try:
+            import pyi_splash  # type: ignore
+        except ImportError:
+            print("no splash to close")
+            return
+
+        pyi_splash.close()
+
+    threading.Thread(target=_close_splash, daemon=True).start()
+
     webview.start(debug=False)
