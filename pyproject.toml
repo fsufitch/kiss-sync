@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "kiss-sync"
+version = "0.1.0"
+description = ""
+authors = ["Filip Sufitchi <fsufitchi@gmail.com>"]
+license = "GPLv3"
+readme = "README.md"
+packages = [{include = "kiss_sync"}]
+exclude = ["kiss_sync/gui/node_modules"]
+
+[tool.poetry.scripts]
+kiss = "kiss_sync.__main__:main"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+pywebview = "^4.1"
+cherrypy = "^18.8.0"
+
+
+[tool.poetry.group.dev.dependencies]
+poetry = "^1.5.1"
+pyinstaller = "^5.11.0"
+black = "^23.3.0"
+pyright = "^1.1.313"
+flake8 = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

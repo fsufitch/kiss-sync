@@ -1,0 +1,40 @@
+{
+    "name": "KISS-Sync Devcontainer",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "workspaceFolder": "/home/developer/kiss-sync",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/developer/kiss-sync,type=bind,consistency=cached",
+    "remoteUser": "developer",
+    "containerUser": "developer",
+    "overrideCommand": true,
+    "updateContentCommand": {
+        // Create the Poetry virtualenv and install dependencies in it
+        // "python-deps": "cd /home/developer/kiss-sync && poetry install"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+				"ms-vscode-remote.remote-ssh",
+				"eamodio.gitlens",
+				"yzhang.markdown-all-in-one",
+				"redhat.vscode-yaml",
+				"mikestead.dotenv",
+				"foxundermoon.shell-format",
+				"ms-azuretools.vscode-docker",
+				"ms-vscode.remote-repositories",
+				"mrmlnc.vscode-scss",
+				"pmneo.tsimporter",
+				"stringham.move-ts",
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint",
+				"Vue.volar",
+				"ms-python.python",
+				"ms-python.black-formatter"
+			],
+            "settings": {
+                "remote.containers.cacheVolume": true // Speeds up extension install
+            }
+        }
+    }
+}
