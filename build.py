@@ -15,6 +15,7 @@ SEP = os.pathsep
 print(SEP)
 args.extend(["--clean"])
 args.extend(["--noconfirm"])
+args.extend(["--onefile"])
 args.extend(["--name", "kiss"])
 args.extend(["--hidden-import", "qtpy"])  # Qt support
 args.extend(["--add-data", f"kiss_sync/gui/dist{SEP}kiss_sync/gui/dist"])
