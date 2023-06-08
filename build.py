@@ -11,7 +11,6 @@ if __name__ != "__main__":
 args = []
 
 SEP = os.pathsep
-EXEC = shutil.which("kiss")
 
 print(SEP)
 args.extend(["--clean"])
@@ -19,7 +18,7 @@ args.extend(["--noconfirm"])
 args.extend(["--name", "kiss"])
 args.extend(["--hidden-import", "qtpy"])  # Qt support
 args.extend(["--add-data", f"kiss_sync/gui/dist{SEP}kiss_sync/gui/dist"])
-args.extend([EXEC])
+args.extend(["kiss_sync/__main__.py"])
 
 print(args)
 
