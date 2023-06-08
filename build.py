@@ -1,3 +1,5 @@
+import os
+import shutil
 import sys
 import PyInstaller.__main__ as pyinstaller
 
@@ -8,11 +10,17 @@ if __name__ != "__main__":
 
 args = []
 
-# args.extend(["--clean"])
+SEP = os.pathsep
+EXEC = shutil.which("kiss")
+
+print(SEP)
+args.extend(["--clean"])
 args.extend(["--noconfirm"])
-args.extend(["--name", "kiss_sync"])
-args.extend(["--hidden-import", "kiss_sync.gui.dist"])
-args.extend(["--collect-all", "kiss_sync.gui.dist"])
-args.extend(["kiss_sync/__main__.py"])
+args.extend(["--name", "kiss"])
+args.extend(["--hidden-import", "qtpy"])  # Qt support
+args.extend(["--add-data", f"kiss_sync/gui/dist{SEP}kiss_sync/gui/dist"])
+args.extend([EXEC])
+
+print(args)
 
 pyinstaller.run(args)

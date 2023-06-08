@@ -23,6 +23,7 @@ pyinstaller = "^5.11.0"
 black = "^23.3.0"
 pyright = "^1.1.313"
 flake8 = "^6.0.0"
+nodeenv = "^1.8.0"
 
 [build-system]
 requires = ["poetry-core"]

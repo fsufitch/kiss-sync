@@ -42,4 +42,4 @@ def start_kiss_gui() -> None:
 
     window = webview.create_window("my window", gui_app)
     window.min_size = (800, 600)
-    webview.start(debug=True)
+    webview.start(debug=False)
